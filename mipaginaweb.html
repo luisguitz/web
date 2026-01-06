@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentación Profesional</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-color: #111827;
+      --text-color: #e5e7eb;
+      --muted-color: #9ca3af;
+      --accent-color: #38bdf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    section h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted-color);
+      margin-bottom: 12px;
+    }
+
+    section p {
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    /* ===== Header ===== */
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent-color);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info h1 {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+
+    .info h2 {
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      font-weight: 400;
+    }
+
+    /* ===== Skills ===== */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 16px 20px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+    }
+
+    /* ===== Carrusel Manual ===== */
+    .carousel {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-top: 16px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+    }
+
+    .carousel-track img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 1.8rem;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .arrow:hover {
+      background: var(--accent-color);
+      color: #020617;
+    }
+
+    .arrow.left { left: 12px; }
+    .arrow.right { right: 12px; }
+
+    /* ===== Buttons ===== */
+    footer {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: #020617;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text-color);
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 32px 24px; }
+      .profile { justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+
+    <header class="profile">
+      <div class="photo">
+        <img src="foto1.png" alt="Foto de perfil">
+      </div>
+      <div class="info">
+        <h1>Luis Pedro Alejandro Guitz Cana</h1>
+        <h2>Perito con orientación en computación</h2>
+      </div>
+    </header>
+
+    <section>
+      <h3>Sobre mí</h3>
+      <p>
+        Conforme a mi participación en la selección nacional de robótica de Guatemala,
+        he fortalecido mi pasión por la tecnología y la innovación.
+      </p>
+    </section>
+
+    <section>
+      <h3>Habilidades</h3>
+      <div class="skills">
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">Diseño de PCB</div>
+        <div class="skill">UI Minimalista</div>
+        <div class="skill">Arduino & Electrónica</div>
+        <div class="skill">Resolución de Problemas</div>
+        <div class="skill">Herramientas Digitales</div>
+        <div class="skill">Software Básico</div>
+        <div class="skill">Ofimática</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Objetivo Profesional</h3>
+      <p>
+        Crecer profesionalmente y aportar valor a proyectos tecnológicos innovadores.
+      </p>
+    </section>
+
+    <section>
+      <h3>Información Adicional</h3>
+      <p>
+        📍 Chimaltenango, Guatemala<br>
+        📧 luispedroguitzcana@gmail.com<br>
+        📞 4191-1488
+      </p>
+    </section>
+
+    <!-- ===== Sección de Fotos ===== -->
+    <section>
+      <h3>Galería de Proyectos</h3>
+
+      <div class="carousel">
+        <button class="arrow left" onclick="prev()">&#10094;</button>
+
+        <div class="carousel-track" id="track">
+          <img src="foto2.jpg">
+          <img src="foto3.jpg">
+          <img src="foto4.jpg">
+          <img src="foto5.jpg">
+        </div>
+
+        <button class="arrow right" onclick="next()">&#10095;</button>
+      </div>
+    </section>
+
+    <footer>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luispedroguitzcana@gmail.com"
+   class="btn btn-primary" target="_blank">
+  Contactar
+</a>
+
+      <a href="cv2026.pdf" class="btn btn-outline">Descargar CV</a>
+    </footer>
+
+  </main>
+
+  <script>
+    let index = 0;
+    const track = document.getElementById('track');
+    const total = 4;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function next() {
+      index = (index + 1) % total;
+      update();
+    }
+
+    function prev() {
+      index = (index - 1 + total) % total;
+      update();
+    }
+  </script>
+
+</body>
+</html>
